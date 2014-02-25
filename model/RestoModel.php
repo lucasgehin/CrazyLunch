@@ -2,6 +2,12 @@
 
 	class RestoModel {
 
+		private $guzzleClient;
+		private $baseUri;
+		private $ressourceName;
+		private $arrayData;
+		private $rawData;
+
 		public function __construct()
 		{
 			# code...

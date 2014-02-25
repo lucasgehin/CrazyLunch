@@ -1,12 +1,14 @@
 <?php
 
-	private $guzzleClient;
-	private $baseUri;
-	private $ressourceName;
-	private $arrayData;
-	private $rawData;
+
 	
 	class PlatModel {
+
+		private $guzzleClient;
+		private $baseUri;
+		private $ressourceName;
+		private $arrayData;
+		private $rawData;
 
 		public function __construct()
 		{
