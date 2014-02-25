@@ -30,7 +30,7 @@
 
 		public function getJson()
 		{
-			# code...
+			return $this->rawData;
 		}
 
 		public function getArray()
