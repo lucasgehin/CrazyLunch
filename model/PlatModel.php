@@ -1,6 +1,7 @@
 <?php
 
-
+require_once 'vendor/autoload.php';
+use Guzzle\Http\Client;
 	
 	class PlatModel {
 
@@ -12,7 +13,12 @@
 
 		public function __construct()
 		{
-			# code...
+			$this->baseUri = 'https://webetu.iutnc.univ-lorraine.fr/www/canals5/crazylunch/';
+			$this->guzzleClient = new Client($this->baseUri);
+			$this->ressourceName = 'plats/';
+			$request = $this->guzzleClient->get($this->ressourceName);
+			$this->rawData = $request->send();
+
 		}
 
 		public function find($id)
@@ -32,7 +38,7 @@
 
 		public function getJson()
 		{
-			# code...
+			return $this->rawData;
 		}
 
 		public function getArray()
