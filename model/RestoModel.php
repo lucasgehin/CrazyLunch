@@ -21,4 +21,14 @@
 		{
 			# code...
 		}
+
+		public function getJson()
+		{
+			# code...
+		}
+
+		public function getArray()
+		{
+			# code...
+		}
 	}

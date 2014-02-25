@@ -1,5 +1,11 @@
 <?php
 
+	private $guzzleClient;
+	private $baseUri;
+	private $ressourceName;
+	private $arrayData;
+	private $rawData;
+	
 	class PlatModel {
 
 		public function __construct()
@@ -18,6 +24,16 @@
 		}
 
 		public function findRel($id, $relation)
+		{
+			# code...
+		}
+
+		public function getJson()
+		{
+			# code...
+		}
+
+		public function getArray()
 		{
 			# code...
 		}
