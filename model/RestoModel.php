@@ -45,6 +45,6 @@
 
 		public function getArray()
 		{
-			return $this->rawData;
+			
 		}
 	}
