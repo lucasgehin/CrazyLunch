@@ -12,7 +12,7 @@
 		{
 			$this->baseUri = 'https://webetu.iutnc.univ-lorraine.fr/www/canals5/crazylunch/';
 			$this->guzzleClient = new Client($this->baseUri);
-			$this->ressourceName = 'restos/';
+			$this->ressourceName = 'restos';
 			$request = $this->guzzleClient->get($this->ressourceName);
 			$this->rawData = $request->send();
 		}
