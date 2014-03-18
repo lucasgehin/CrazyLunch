@@ -15,25 +15,30 @@ use Guzzle\Http\Client;
 		{
 			$this->baseUri = 'https://webetu.iutnc.univ-lorraine.fr/www/canals5/crazylunch/';
 			$this->guzzleClient = new Client($this->baseUri);
-			$this->ressourceName = 'plats/';
-			$request = $this->guzzleClient->get($this->ressourceName);
-			$this->rawData = $request->send();
+			$this->ressourceName = 'plats';
+			
 
 		}
 
 		public function find($id)
 		{
-			# code...
+			$request = $this->guzzleClient->get($this->ressourceName.'/'.$id);
+			$this->rawData = $request->send();
+
+			return $this;
 		}
 
 		public function findAll()
 		{
-			# code...
+			$request = $this->guzzleClient->get($this->ressourceName.'/');
+			$this->rawData = $request->send();	
+			return $this;
 		}
 
 		public function findRel($id, $relation)
 		{
-			# code...
+			$request = $this->guzzleClient->get($this->ressourceName.'/'.$id.'/'.$relation);
+			$this->rawData = $request->send();
 		}
 
 		public function getJson()
