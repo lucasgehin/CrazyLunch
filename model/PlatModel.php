@@ -39,6 +39,7 @@ use Guzzle\Http\Client;
 		{
 			$request = $this->guzzleClient->get($this->ressourceName.'/'.$id.'/'.$relation);
 			$this->rawData = $request->send();
+			return $this;
 		}
 
 		public function getJson()
