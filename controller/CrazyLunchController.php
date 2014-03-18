@@ -8,9 +8,15 @@
 
 		public function callAction($request)
 		{
-			switch ($request) {
+			switch ($request['a']) {
 				case 'lt':
 					CrazyLunchController::listeTheme();
+					break;
+				case 'lp':
+					if(isset($request['idr'])){
+						$idr = $request['idr'];
+						CrazyLunchController::listePlat($idr);
+					}
 					break;
 				
 				default:
@@ -22,6 +28,25 @@
 		public function listeTheme()
 		{
 			
+		}
+
+		public function listePlat($idr)
+		{
+			$m = new \model\PlatModel();
+			
+		}
+
+		public function returnJson()
+		{
+			header("Content-Type", "application/json");
+		}
+
+		public function addCart($data)
+		{
+			if(!isset($data["id"])) return;
+			$id = $data['id'];
+			$m = new \model\PlatModel();
+
 		}
 
 	}
