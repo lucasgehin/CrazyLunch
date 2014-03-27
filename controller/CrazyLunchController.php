@@ -33,7 +33,7 @@
 		public function listePlat($idr)
 		{
 			$m = new \model\PlatModel();
-			
+			return $m->findAll().getJson();
 		}
 
 		public function returnJson()
