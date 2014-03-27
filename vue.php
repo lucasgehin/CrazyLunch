@@ -23,11 +23,18 @@
 					<h1>Crazy Lunch </h1>
 					<h3>Le bon déjeuner pour les pros qui bossent même à midi !</h3>
 				</header>
+					<div id="corps">
+					<div id="nav"></div>
 					<nav> <span class="red">Accueil</span> / Thèmes / Restaurants / Plats </nav>
 				
 					<section>
 					</section>
-				
+					</div>
+				<footer>
+					<br />
+					Projet de Web Avancé - IUT Nancy Charlemagne<br />
+					GEHIN Lucas - LEJAL Simon - ROLLINGER Jerome - GOUJON Thibault
+				</footer>
 
 			</body>
 			</html>
