@@ -1,52 +1,51 @@
 <?php
 
-require_once 'vendor/autoload.php';
+
 use Guzzle\Http\Client;
 
-	class ThemeModel {
+class ThemeModel {
 
-		private $guzzleClient;
-		private $baseUri;
-		private $ressourceName;
-		private $arrayData;
-		private $rawData;
+    private $guzzleClient;
+    static private $baseUri = 'https://webetu.iutnc.univ-lorraine.fr/www/canals5/crazylunch/';
+    static private $ressourceName = 'themes/';
+    private $arrayData = array();
+    private $rawData;
 
-		public function __construct()
-		{
-			$this->baseUri = 'https://webetu.iutnc.univ-lorraine.fr/www/canals5/crazylunch/';
-			$this->guzzleClient = new Client($this->baseUri);
-			$this->ressourceName = 'themes';
-		}
+    public function __construct() {
+        $this->guzzleClient = new Client(static::$baseUri);
+    }
 
-		public function find($id)
-		{
-			$request = $this->guzzleClient->get($this->ressourceName.'/'.$id);
-			$this->rawData = $request->send();
+    public function find($id) {
+        $request = $this->guzzleClient->get(static::$ressourceName . $id);
+        $response = $request->send();
+        $this->rawData = $response->getBody(true);
+        $this->arrayData = $response->json();
+        return $this;
+    }
 
-			return $this;
-		}
+    public function findAll() {
+        $request = $this->guzzleClient->get(static::$ressourceName);
+        $response = $request->send();
+        $this->rawData = $response->getBody(true);
+        $this->arrayData = $response->json();
+        return $this;
+    }
 
-		public function findAll()
-		{
-			$request = $this->guzzleClient->get($this->ressourceName.'/');
-			$this->rawData = $request->send();	
-			return $this;
-		}
+    public function findRel($id, $relation) {
 
-		public function findRel($id, $relation)
-		{
-			$request = $this->guzzleClient->get($this->ressourceName.'/'.$id.'/'.$relation);
-			$this->rawData = $request->send();
-			return $this;
-		}
+        $request = $this->guzzleClient->get(static::$ressourceName . $id . '/' . $relation);
+        $response = $request->send();
+        $this->rawData = $response->getBody(true);
+        $this->arrayData = $response->json();
+        return $this;
+    }
 
-		public function getJson()
-		{
-			return $this->rawData;
-		}
+    public function getJson() {
+        return $this->rawData;
+    }
 
-		public function getArray()
-		{
-			# code...
-		}
-	}
+    public function getArray() {
+        return $this->arrayData;
+    }
+
+}
