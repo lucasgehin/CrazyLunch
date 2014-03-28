@@ -25,9 +25,19 @@
 				</header>
 					<div id="corps">
 					<div id="nav"></div>
-					<nav> <span class="red">Accueil</span> / Thèmes / Restaurants / Plats </nav>
-				
+					<nav> <span class="red">Accueil</span> / Thèmes / Restaurants / Plats 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src="images/panier.jpg" alt="Mon petit panier" class="panier"/>
+					</nav>
+					
 					<section>
+					<div class="panier" visibility:hidden></div>
 					</section>
 					</div>
 				<footer>

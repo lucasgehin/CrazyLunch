@@ -2,11 +2,13 @@
 	include_once 'model/PlatModel.php';
 	include_once 'model/ThemeModel.php';
 	include_once 'vue.php';
+	include_once 'model/Cart.php';
 	//include 'lunch_autoload.php'; 
 
 	
 
 	class CrazyLunchController {
+
 
 		public function callAction($request)
 		{
@@ -28,6 +30,7 @@
 					CrazyLunchController::defaultAction();
 					break;
 			}
+
 		}
 
 		public function listeTheme()
